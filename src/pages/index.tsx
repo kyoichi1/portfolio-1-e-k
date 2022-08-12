@@ -22,7 +22,6 @@ const Home: NextPage = () => {
 
       {/* HOME */}
       <div className="m-auto w-96 ">
-
         {/*Header */}
         <div className="pt-11">
           <div className="flex h-16 w-96 place-content-around items-center text-lg font-bold">
@@ -38,7 +37,7 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-      {/* Main */}
+        {/* Main */}
 
         {/* Title Section */}
         <div className="flex  h-60 w-full items-center justify-center bg-pink-600 text-white">
@@ -106,11 +105,7 @@ const Home: NextPage = () => {
 
           <div className="">
             <div className="mt-6 ">
-              <Image
-                src="/sample.png"
-                width={385}
-                height={184}
-              />
+              <Image src="/sample.png" width={385} height={184}  alt=""/>
             </div>
             <div className="my-3 font-['YuGothic'] text-2xl  font-bold text-gray-700">
               <h2> IT KINGDOM </h2>
@@ -206,6 +201,7 @@ const Home: NextPage = () => {
                     src="/profile-shimabu.png"
                     width={40}
                     height={40}
+                    alt=""
                   />
                 </div>
                 <div className="w-80 text-ellipsis">
@@ -223,7 +219,7 @@ const Home: NextPage = () => {
 
                   <div className="mx-2 my-4 text-sm">
                     <p>
-                      📣 新サービス「Noway Form」をリリースしました！
+                      📣 新サービス「Noway Form」をリリースしました!
                       <br />
                       <br /> Noway
                       Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogleFormsでやっていたことがNotionだけで完結します✌✨

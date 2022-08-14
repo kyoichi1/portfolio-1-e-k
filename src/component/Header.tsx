@@ -8,33 +8,41 @@ const Header = () => {
     <div className=" w-auto pt-11 sm:ml-24 sm:justify-around sm:pt-0">
       <div className="mx-4 flex h-16 items-center justify-between text-lg font-bold sm:mx-4">
         <div className="sm:hidden sm:bg-purple-600">
-          <FaBars />
+          <Link href="/menu">
+            <a>
+              <FaBars />
+            </a>
+          </Link>
         </div>
         <div className="font-[Avenir_Next] sm:w-56 sm:flex-1 sm:pl-28 ">
-          <p className="sm:ml:20 sm:w-64">Shimabu IT University</p>
+          <Link href="/">
+            <a>
+              <p className="sm:ml:20 sm:w-64">Shimabu IT University</p>
+            </a>
+          </Link>
         </div>
 
         <div className="sm:flex2 hidden w-auto sm:flex sm:justify-end  sm:pl-20 ">
           <div className="mr-4 ml-8">
-            <Link href="">
+            <Link href="/about">
               <a>About</a>
             </Link>
           </div>
 
           <div className="mr-4">
-            <Link href="">
+            <Link href="/blog">
               <a>Blog</a>
             </Link>
           </div>
 
           <div className="mr-4">
-            <Link href="">
+            <Link href="/portfolio">
               <a>Portfolio</a>
             </Link>
           </div>
 
           <div className="mr-4">
-            <Link href="">
+            <Link href="/contact">
               <a>Contact</a>
             </Link>
           </div>

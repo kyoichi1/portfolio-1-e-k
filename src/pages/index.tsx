@@ -1,16 +1,16 @@
 import type { NextPage } from "next";
-import About from "src/component/About";
 import Blog from "src/component/Blog";
-import BlogDetail from "src/component/BlogDetail";
 import Button from "src/component/Button";
-import Contact from "src/component/Contact";
 import Footer from "src/component/Footer";
 import GitHub from "src/component/GitHub";
 import Header from "src/component/Header";
-import Menu from "src/component/Menu";
 import Portfolio from "src/component/Portfolio";
 import Title from "src/component/Title";
 import Twitter from "src/component/Twitter";
+// import Menu from "src/component/Menu";
+// import About from "src/component/About";
+// import BlogDetail from "src/component/BlogDetail";
+// import Contact from "src/component/Contact";
 
 const Test: NextPage = () => {
   return (

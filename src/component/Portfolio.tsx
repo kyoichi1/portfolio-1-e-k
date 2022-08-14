@@ -3,7 +3,7 @@ import React from "react";
 
 const Portfolio = () => {
   return (
-    <div className="m-4 sm:mx-56">
+    <div className="mx-4 mt-10 sm:mx-56 sm:mr-32 sm:w-auto">
       <div className="text-3xl font-bold text-gray-800">
         <h1>Portfolio</h1>
       </div>
@@ -13,7 +13,13 @@ const Portfolio = () => {
       <div className="sm:flex sm:flex-wrap">
         <div className="h-96 sm:mr-4 sm:w-72 ">
           <div className="mt-6">
-            <Image src="/sample.png" width={385} height={184} alt="" />
+            <Image
+              className="w-[390px] bg-purple-300"
+              src="/portfolio.svg"
+              width={385}
+              height={200}
+              alt=""
+            />
           </div>
           <div className="my-3 h-4 font-['YuGothic'] text-2xl font-bold text-gray-700">
             <h2> IT KINGDOM </h2>
@@ -29,7 +35,13 @@ const Portfolio = () => {
         </div>
         <div className="h-96 sm:mr-4 sm:w-72 ">
           <div className="mt-6">
-            <Image src="/sample.png" width={385} height={184} alt="" />
+            <Image
+              className="w-[390px] bg-purple-300"
+              src="/portfolio.svg"
+              width={385}
+              height={200}
+              alt=""
+            />
           </div>
           <div className="my-3 h-4 font-['YuGothic'] text-2xl font-bold text-gray-700">
             <h2> IT KINGDOM </h2>
@@ -45,7 +57,13 @@ const Portfolio = () => {
         </div>
         <div className="h-96 sm:mr-4 sm:w-72 ">
           <div className="mt-6">
-            <Image src="/sample.png" width={385} height={184} alt="" />
+            <Image
+              className="w-[390px] bg-purple-300"
+              src="/portfolio.svg"
+              width={385}
+              height={200}
+              alt=""
+            />
           </div>
           <div className="my-3 h-4 font-['YuGothic'] text-2xl font-bold text-gray-700">
             <h2> IT KINGDOM </h2>
@@ -61,7 +79,13 @@ const Portfolio = () => {
         </div>
         <div className="h-96 sm:mr-4 sm:w-72 ">
           <div className="mt-6">
-            <Image src="/sample.png" width={385} height={184} alt="" />
+            <Image
+              className="w-[390px] bg-purple-300"
+              src="/portfolio.svg"
+              width={385}
+              height={200}
+              alt=""
+            />
           </div>
           <div className="my-3 h-4 font-['YuGothic'] text-2xl font-bold text-gray-700">
             <h2> IT KINGDOM </h2>
@@ -77,7 +101,13 @@ const Portfolio = () => {
         </div>
         <div className="h-96 sm:mr-4 sm:w-72 ">
           <div className="mt-6">
-            <Image src="/sample.png" width={385} height={184} alt="" />
+            <Image
+              className="w-[390px] bg-purple-300"
+              src="/portfolio.svg"
+              width={385}
+              height={200}
+              alt=""
+            />
           </div>
           <div className="my-3 h-4 font-['YuGothic'] text-2xl font-bold text-gray-700">
             <h2> IT KINGDOM </h2>
@@ -93,7 +123,13 @@ const Portfolio = () => {
         </div>
         <div className="h-96 sm:mr-4 sm:w-72 ">
           <div className="mt-6">
-            <Image src="/sample.png" width={385} height={184} alt="" />
+            <Image
+              className="w-[390px] bg-purple-300"
+              src="/portfolio.svg"
+              width={385}
+              height={200}
+              alt=""
+            />
           </div>
           <div className="my-3 h-4 font-['YuGothic'] text-2xl font-bold text-gray-700">
             <h2> IT KINGDOM </h2>

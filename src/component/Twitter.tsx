@@ -17,7 +17,7 @@ const Twitter = () => {
               <div className="m-2">
                 <Image
                   className="items-center rounded-full"
-                  src="/profile-shimabu.png"
+                  src="/Twitter-shimabu.png"
                   width={40}
                   height={40}
                   alt=""
@@ -68,7 +68,7 @@ const Twitter = () => {
               <div className="m-2">
                 <Image
                   className="items-center rounded-full"
-                  src="/profile-shimabu.png"
+                  src="/Twitter-shimabu.png"
                   width={40}
                   height={40}
                   alt=""
@@ -119,7 +119,7 @@ const Twitter = () => {
               <div className="m-2">
                 <Image
                   className="items-center rounded-full"
-                  src="/profile-shimabu.png"
+                  src="/Twitter-shimabu.png"
                   width={40}
                   height={40}
                   alt=""

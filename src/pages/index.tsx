@@ -12,9 +12,9 @@ import Twitter from "src/component/Twitter";
 // import BlogDetail from "src/component/BlogDetail";
 // import Contact from "src/component/Contact";
 
-const Test: NextPage = () => {
+const HOME: NextPage = () => {
   return (
-    <div className="m-auto w-96 sm:w-auto ">
+    <div className="m-auto w-96 min-w-min sm:w-auto items-center">
       {/* <Menu/> */}
       {/* <About/> */}
       {/* <BlogDetail/> */}
@@ -43,4 +43,4 @@ const Test: NextPage = () => {
   );
 };
 
-export default Test;
+export default HOME;

@@ -5,30 +5,34 @@ const Menu = () => {
   return (
     <div className="h-screen w-full bg-pink-600 p-6 text-white">
       <div className="py-11 text-3xl font-bold">
-        <MdClose />
+        <Link href="/">
+          <a>
+            <MdClose />
+          </a>
+        </Link>
       </div>
 
       <div className="w-24   text-2xl font-bold">
         <div className="my-3">
-          <Link href="">
+          <Link href="/about">
             <a>About</a>
           </Link>
         </div>
 
         <div className="my-3">
-          <Link href="">
+          <Link href="/blog">
             <a>Blog</a>
           </Link>
         </div>
 
         <div className="my-3">
-          <Link href="">
+          <Link href="/portfolio">
             <a>Portfolio</a>
           </Link>
         </div>
 
         <div className="my-3">
-          <Link href="">
+          <Link href="contact">
             <a>Contact</a>
           </Link>
         </div>

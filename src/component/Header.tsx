@@ -3,6 +3,25 @@ import React from "react";
 import { FaBars } from "react-icons/fa";
 import { MdOutlineDarkMode } from "react-icons/md";
 
+const LINKS = [
+  {
+    href: "/about",
+    title: "About",
+  },
+  {
+    href: "/blog",
+    title: "Blog",
+  },
+  {
+    href: "/portfolio",
+    title: "Portfolio",
+  },
+  {
+    href: "/contact",
+    title: "Contact",
+  },
+];
+
 const Header = () => {
   return (
     <div className=" w-auto pt-11 sm:ml-24 sm:justify-around sm:pt-0">
@@ -23,29 +42,15 @@ const Header = () => {
         </div>
 
         <div className="sm:flex2 hidden w-auto sm:flex sm:justify-end  sm:pl-20 ">
-          <div className="mr-4 ml-8">
-            <Link href="/about">
-              <a>About</a>
-            </Link>
-          </div>
-
-          <div className="mr-4">
-            <Link href="/blog">
-              <a>Blog</a>
-            </Link>
-          </div>
-
-          <div className="mr-4">
-            <Link href="/portfolio">
-              <a>Portfolio</a>
-            </Link>
-          </div>
-
-          <div className="mr-4">
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
-          </div>
+          {LINKS.map((links) => {
+            return (
+              <div key={links.title} className="mr-4">
+                <Link href={links.href}>
+                  <a>{links.title}</a>
+                </Link>
+              </div>
+            );
+          })}
         </div>
 
         <div className="text-2xl sm:mr-28">

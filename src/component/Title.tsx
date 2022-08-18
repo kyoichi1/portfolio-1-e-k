@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaFacebook, FaRss, FaTwitter } from "react-icons/fa";
 
@@ -15,15 +16,27 @@ const Title = () => {
           </div>
         </div>
         {/* ソーシャルアイコン */}
-        <div className="flex h-32 w-20 items-center sm:min-w-fit ">
+        <div className="flex h-32 w-20 items-center sm:min-w-fit">
           <div className="mr-3">
+            <Link href="https://twitter.com">
+            <a>
             <FaTwitter />
+            </a>
+            </Link>
           </div>
           <div className="mr-3">
+          <Link href="https://ja-jp.facebook.com">
+            <a>
             <FaFacebook />
+            </a>
+            </Link>
           </div>
           <div className="mr-3">
+            <Link href="">
+            <a>
             <FaRss />
+            </a>
+            </Link>
           </div>
         </div>
       </div>

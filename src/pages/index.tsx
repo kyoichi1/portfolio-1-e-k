@@ -1,25 +1,14 @@
 import type { NextPage } from "next";
 import Blog from "src/component/Blog";
 import Button from "src/component/Button";
-import Footer from "src/component/Footer";
 import GitHub from "src/component/GitHub";
-import Header from "src/component/Header";
 import Portfolio from "src/component/Portfolio";
 import Title from "src/component/Title";
 import Twitter from "src/component/Twitter";
-// import Menu from "src/component/Menu";
-// import About from "src/component/About";
-// import BlogDetail from "src/component/BlogDetail";
-// import Contact from "src/component/Contact";
 
 const HOME: NextPage = () => {
   return (
-    <div className="m-auto w-96 min-w-min sm:w-auto items-center">
-      {/* <Menu/> */}
-      {/* <About/> */}
-      {/* <BlogDetail/> */}
-      {/* <Contact/> */}
-      <Header />
+    <div className="m-auto w-96 min-w-min items-center sm:w-auto">
       <Title />
       <Blog />
       <Button title="View All" />
@@ -38,7 +27,6 @@ const HOME: NextPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

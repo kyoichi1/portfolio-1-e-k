@@ -1,6 +1,4 @@
 import type { NextPage } from "next";
-import Footer from "src/component/Footer";
-import Header from "src/component/Header";
 import Menu from "src/component/Menu";
 
 const menu: NextPage = () => {

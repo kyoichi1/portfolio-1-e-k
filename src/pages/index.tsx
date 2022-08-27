@@ -1,6 +1,8 @@
 import type {NextPage } from "next";
+import Blog from "src/component/Blog";
 import Button from "src/component/Button";
 import GitHub from "src/component/GitHub";
+import Portfolio from "src/component/Portfolio";
 import Title from "src/component/Title";
 import Twitter from "src/component/Twitter";
 
@@ -9,9 +11,9 @@ const HOME: NextPage = () => {
   return (
     <div className="m-auto w-96 min-w-min items-center sm:w-auto">
       <Title />
-      {/* <Blog /> */}
+      <Blog />
       <Button title="View All" />
-      {/* <Portfolio /> */}
+      <Portfolio />
       <Button title="View All" />
 
       <div className="justify-between sm:mx-52 sm:flex ">

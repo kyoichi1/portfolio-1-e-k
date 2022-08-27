@@ -11,9 +11,9 @@ const HOME: NextPage = () => {
   return (
     <div className="m-auto w-96 min-w-min items-center sm:w-auto">
       <Title />
-      <Blog />
+      {/* <Blog /> */}
       <Button title="View All" />
-      <Portfolio />
+      {/* <Portfolio /> */}
       <Button title="View All" />
 
       <div className="justify-between sm:mx-52 sm:flex ">

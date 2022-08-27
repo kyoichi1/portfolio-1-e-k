@@ -1,8 +1,6 @@
 import type {NextPage } from "next";
-import Blog from "src/component/Blog";
 import Button from "src/component/Button";
 import GitHub from "src/component/GitHub";
-import Portfolio from "src/component/Portfolio";
 import Title from "src/component/Title";
 import Twitter from "src/component/Twitter";
 

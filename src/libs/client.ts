@@ -7,12 +7,12 @@ export const client = createClient({
   // apiKey: "process.env.NEXT_PUBLIC_API_KEY",
 
   //これでvercleのデプロは成功
-  // apiKey: `${process.env.NEXT_PUBLIC_API_KEY}`,
+  apiKey: `${process.env.NEXT_PUBLIC_API_KEY}`,
 
   //これでlocal3000もデプロイもOK
   // apiKey: `${process.env.API_KEY}`,
 
-  apiKey: process.env.API_KEY,
+  // apiKey: process.env.API_KEY,
   // apiKey: `${process.env.API_KEY}`,
   // apiKey: process.env.API_KEY,
 

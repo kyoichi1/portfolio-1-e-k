@@ -1,28 +1,27 @@
 import Image from "next/image";
 import React from "react";
 
-type TwitterProps ={
-  user:{
+type TwitterProps = {
+  user: {
     // id:number;
-    userName:string;
-    userAccount:string;
-    userImage:string;
-  },
-  body:{
-    text:string;
-    image?:string;
-    date:string;
-    link?:string;
-  }
+    userName: string;
+    userAccount: string;
+    userImage: string;
+  };
+  body: {
+    text: string;
+    image?: string;
+    date: string;
+    link?: string;
+  };
   // analytics: {
   //   reply:number;
   //   retweet:number;
   //   like:number;
   // }
+};
 
-}
-
-const Twitter = (props:TwitterProps) => {
+const Twitter = (props: TwitterProps) => {
   return (
     <div className="mx-4 mt-10 w-96 ">
       <div className="my-4 text-3xl font-bold">
@@ -53,7 +52,7 @@ const Twitter = (props:TwitterProps) => {
                     {`@${props.user.userAccount}`}
                   </p>
                   <p className="ml-2 overflow-hidden  text-xs text-gray-500">
-                  {props.body.date}
+                    {props.body.date}
                   </p>
                 </div>
 
@@ -63,18 +62,18 @@ const Twitter = (props:TwitterProps) => {
                     <br />
                     <br /> Noway
                     Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogleFormsでやっていたことがNotionだけで完結します✌✨
-
                     <br />
                     <br />
                     試しに使っていただけると幸いです😊
                     <br />
                     <br />
-                    {props.body.link?<a
-                      className="text-blue-400"
-                      href={props.body.link}
-                    >
-                      {props.body.link}
-                    </a>:null}
+
+
+                    {props.body.link ? (
+                      <a className="text-blue-400" href={props.body.link}>
+                        {props.body.link}
+                      </a>
+                    ) : null}
                   </p>
                 </div>
               </div>
@@ -82,6 +81,7 @@ const Twitter = (props:TwitterProps) => {
           </div>
         </div>
       </div>
+
       {/*投稿内容 */}
       <div className="">
         <div className="mt-10   h-64 ">
@@ -110,7 +110,7 @@ const Twitter = (props:TwitterProps) => {
                 </div>
 
                 <div className="mx-2 my-4 text-sm">
-                  {/* <p>
+                  <p>
                     📣 新サービス「Noway Form」をリリースしました!
                     <br />
                     <br /> Noway
@@ -126,24 +126,8 @@ const Twitter = (props:TwitterProps) => {
                     >
                       https://www.noway-form.com/ja
                     </a>
-                  </p> */}
-                  <p>
-                    📣 {props.body.text}
-                    <br />
-                    <br /> Noway
-                    Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogleFormsでやっていたことがNotionだけで完結します✌✨
-                    <br />
-                    <br />
-                    試しに使っていただけると幸いです😊
-                    <br />
-                    <br />
-                    <a
-                      className="text-blue-400"
-                      href="https://www.noway-form.com/ja"
-                    >
-                      https://www.noway-form.com/ja
-                    </a>
                   </p>
+
                 </div>
               </div>
             </div>

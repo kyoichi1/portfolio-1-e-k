@@ -6,13 +6,11 @@ export const client = createClient({
   // YOUR_DOMAIN is the XXXX part of XXXX.microcms.io
   // apiKey: "process.env.NEXT_PUBLIC_API_KEY",
 
-  //これでvercleのデプロは成功
-  // apiKey: `${process.env.NEXT_PUBLIC_API_KEY}`,
+  //vercleデプロイはOK
+  apiKey: `${process.env.NEXT_PUBLIC_API_KEY}`,
 
-  //これでlocal3000もデプロイもOK
-  // apiKey: `${process.env.API_KEY}`,
-
-  apiKey: process.env.API_KEY,
+  //local3000はOK
   // apiKey: `${process.env.API_KEY}`,
   // apiKey: process.env.API_KEY,
+
 });

@@ -1,10 +1,16 @@
-// 皆さんに教えて頂いたコード
 import React, { ComponentProps, useState } from "react";
 
 const Contact = () => {
-  const handleSubmit: ComponentProps<"form">["onSubmit"] = (e) => {
+  const handleSubmit: ComponentProps<"form">["onSubmit"] = async (e) => {
     e.preventDefault();
     console.log(email, name, text);
+
+    const data = await fetch("/api/post", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ email, name, text }),
+    });
+    // console.log(data);
   };
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");

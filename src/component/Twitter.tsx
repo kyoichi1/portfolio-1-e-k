@@ -3,7 +3,6 @@ import React from "react";
 
 type TwitterProps = {
   user: {
-    // id:number;
     userName: string;
     userAccount: string;
     userImage: string;
@@ -14,11 +13,6 @@ type TwitterProps = {
     date: string;
     link?: string;
   };
-  // analytics: {
-  //   reply:number;
-  //   retweet:number;
-  //   like:number;
-  // }
 };
 
 const Twitter = (props: TwitterProps) => {
@@ -67,8 +61,6 @@ const Twitter = (props: TwitterProps) => {
                     試しに使っていただけると幸いです😊
                     <br />
                     <br />
-
-
                     {props.body.link ? (
                       <a className="text-blue-400" href={props.body.link}>
                         {props.body.link}
@@ -127,7 +119,6 @@ const Twitter = (props: TwitterProps) => {
                       https://www.noway-form.com/ja
                     </a>
                   </p>
-
                 </div>
               </div>
             </div>

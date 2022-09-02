@@ -86,8 +86,6 @@ const Portfolio = () => {
 
 export default Portfolio;
 
-
-
 // import Image from "next/image";
 // import React from "react";
 

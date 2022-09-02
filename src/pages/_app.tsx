@@ -1,16 +1,16 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import Header from 'src/component/Header'
-import Footer from 'src/component/Footer'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import Header from "src/component/Header";
+import Footer from "src/component/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Header/>
+      <Header />
       <Component {...pageProps} />
-      <Footer copyright="© ️2022 Shimabu IT University"/>
+      <Footer copyright="© ️2022 Shimabu IT University" />
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

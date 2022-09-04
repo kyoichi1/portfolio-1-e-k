@@ -5,7 +5,7 @@ import { MdOutlineDarkMode } from "react-icons/md";
 
 const LINKS = [
   {
-    href: "/about",
+    href: "/aboutPages",
     title: "About",
   },
   {
@@ -17,7 +17,7 @@ const LINKS = [
     title: "Portfolio",
   },
   {
-    href: "/contact",
+    href: "/contactPages",
     title: "Contact",
   },
 ];
@@ -27,7 +27,7 @@ const Header = () => {
     <div className=" w-auto pt-11 sm:ml-24 sm:justify-around sm:pt-0">
       <div className="mx-4 flex h-16 items-center justify-between text-lg font-bold sm:mx-4">
         <div className="sm:hidden sm:bg-purple-600">
-          <Link href="/menu">
+          <Link href="/menuPages">
             <a>
               <FaBars />
             </a>

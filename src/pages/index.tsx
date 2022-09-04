@@ -1,5 +1,5 @@
 import type {NextPage } from "next";
-import Blog from "src/component/Blog";
+import BlogList from "src/component/Blog/BlogList";
 import Button from "src/component/Button";
 import GitHub from "src/component/GitHub";
 import Portfolio from "src/component/Portfolio";
@@ -11,7 +11,7 @@ const HOME: NextPage = () => {
   return (
     <div className="m-auto w-96 min-w-min items-center sm:w-auto">
       <Title />
-      <Blog />
+      <BlogList />
       <Button title="View All" />
       <Portfolio />
       <Button title="View All" />

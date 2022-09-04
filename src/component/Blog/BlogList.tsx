@@ -46,7 +46,7 @@ const BLOGS = [
   },
 ];
 
-const Blog = () => {
+const BlogList = () => {
   return (
     <div className="mx-4 mt-10 sm:mx-56">
       <div className="my-4 text-3xl font-bold text-gray-800">
@@ -55,7 +55,7 @@ const Blog = () => {
       <div className="border-t-2"></div>
       {BLOGS.map((blogs) => {
         return (
-          <Link href="/blogdetail" key={blogs.title}>
+          <Link href="blog/blogDetailsPages" key={blogs.title}>
             <a>
               <div className="Class Preview mt-4  h-32  hover:cursor-pointer sm:mb-10  sm:h-24">
                 {/* Blogタイトル */}
@@ -81,4 +81,5 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogList;
+

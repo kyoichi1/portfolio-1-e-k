@@ -20,7 +20,7 @@ export type Portfolio = {
 
 type Props = MicroCMSListResponse<Portfolio>;
 
-const portfolio: NextPage<Props> = (props) => {
+const PortfolioPages: NextPage<Props> = (props) => {
   return (
     <div className="mx-4 mt-10 sm:mx-56  sm:mr-32 sm:w-auto">
       <div className="my-4 text-3xl font-bold text-gray-800">
@@ -74,4 +74,4 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-export default portfolio;
+export default PortfolioPages;

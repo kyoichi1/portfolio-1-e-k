@@ -1,12 +1,12 @@
 import React from "react";
 
-type blogdetailProps = {
+type blogDetailsProps = {
   title: string;
   article: string;
   CreatedDate: string;
 };
 
-const BlogDetail = (props: blogdetailProps) => {
+const BlogDetails = (props: blogDetailsProps) => {
   return (
     <div className="mx-4 mt-10 min-w-min sm:ml-56 sm:mr-32 sm:w-auto">
       <div className="my-4 text-3xl font-bold text-gray-800">
@@ -25,4 +25,5 @@ const BlogDetail = (props: blogdetailProps) => {
   );
 };
 
-export default BlogDetail;
+export default BlogDetails;
+

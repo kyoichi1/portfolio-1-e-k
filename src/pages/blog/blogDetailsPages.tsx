@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
-import BlogDetail from "src/component/BlogDetail";
+import BlogDetails from "src/component/Blog/BlogDetails";
 
-const blogdetail: NextPage = () => {
+const BlogDetailsPages: NextPage = () => {
   return (
     <div className="m-auto flex min-h-screen  w-96 flex-col sm:w-auto ">
       <div className="flex-grow ">
-        <BlogDetail
+        <BlogDetails
           title="This is header"
           article="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
   sint. Velit officia consequat duis enim velit mollit."
@@ -16,4 +16,4 @@ const blogdetail: NextPage = () => {
   );
 };
 
-export default blogdetail;
+export default BlogDetailsPages;

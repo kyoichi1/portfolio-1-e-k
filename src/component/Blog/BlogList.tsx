@@ -13,30 +13,6 @@ const BlogList: FC<Props> = (props) => {
         <h1>Blog</h1>
       </div>
       <div className="border-t-2"></div>
-      {/* {BLOGS.map((blogs) => {
-        return (
-          <Link href="blog/blogDetailsPages" key={blogs.title}>
-            <a>
-              <div className="Class Preview mt-4  h-32  hover:cursor-pointer sm:mb-10  sm:h-24">
-           
-                <div className="font-['YuGothic'] text-2xl  font-bold text-gray-700">
-                  <h1>{blogs.title}</h1>
-                </div>
-              
-                <div className="text-gray-80  mt-2 h-12 text-clip font-['YuGothic'] text-gray-700 ">
-                  <p className="h-12 overflow-hidden text-ellipsis ">
-                    {blogs.article}
-                  </p>
-                </div>
-               
-                <div className=" font-['Avenir_Next'] text-xs font-bold text-gray-400 ">
-                  <p>{blogs.CreatedDate}</p>
-                </div>
-              </div>
-            </a>
-          </Link>
-        );
-      })} */}
       {props.contents.map((content) => {
         return (
           <div key={content.id}>

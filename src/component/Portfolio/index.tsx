@@ -1,52 +1,58 @@
+import dayjs from "dayjs";
+import { MicroCMSListResponse } from "microcms-js-sdk";
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+import React, { FC } from "react";
+import { PortfolioType } from "src/pages/portfolio";
 
-const ITEMS = [
-  {
-    title: "IT KINGDOM1 ",
-    src: "/portfolio.svg",
-    description:
-      "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
-    creationTime: "2021.10 - 2021.12",
-  },
-  {
-    title: "IT KINGDOM2 ",
-    src: "/portfolio.svg",
-    description:
-      "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
-    creationTime: "2021.10 - 2021.12",
-  },
-  {
-    title: "IT KINGDOM3 ",
-    src: "/portfolio.svg",
-    description:
-      "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
-    creationTime: "2021.10 - 2021.12",
-  },
-  {
-    title: "IT KINGDOM4 ",
-    src: "/portfolio.svg",
-    description:
-      "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
-    creationTime: "2021.10 - 2021.12",
-  },
-  {
-    title: "IT KINGDOM5 ",
-    src: "/portfolio.svg",
-    description:
-      "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
-    creationTime: "2021.10 - 2021.12",
-  },
-  {
-    title: "IT KINGDOM6 ",
-    src: "/portfolio.svg",
-    description:
-      "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
-    creationTime: "2021.10 - 2021.12",
-  },
-];
+// const ITEMS = [
+//   {
+//     title: "IT KINGDOM1 ",
+//     src: "/portfolio.svg",
+//     description:
+//       "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
+//     creationTime: "2021.10 - 2021.12",
+//   },
+//   {
+//     title: "IT KINGDOM2 ",
+//     src: "/portfolio.svg",
+//     description:
+//       "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
+//     creationTime: "2021.10 - 2021.12",
+//   },
+//   {
+//     title: "IT KINGDOM3 ",
+//     src: "/portfolio.svg",
+//     description:
+//       "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
+//     creationTime: "2021.10 - 2021.12",
+//   },
+//   {
+//     title: "IT KINGDOM4 ",
+//     src: "/portfolio.svg",
+//     description:
+//       "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
+//     creationTime: "2021.10 - 2021.12",
+//   },
+//   {
+//     title: "IT KINGDOM5 ",
+//     src: "/portfolio.svg",
+//     description:
+//       "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
+//     creationTime: "2021.10 - 2021.12",
+//   },
+//   {
+//     title: "IT KINGDOM6 ",
+//     src: "/portfolio.svg",
+//     description:
+//       "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
+//     creationTime: "2021.10 - 2021.12",
+//   },
+// ];
 
-const Portfolio = () => {
+type Props = MicroCMSListResponse<PortfolioType>;
+
+const Portfolio: FC<Props> = (props) => {
   return (
     <div className="mx-4 mt-10 sm:mx-56 sm:mr-32 sm:w-auto">
       <div className="text-3xl font-bold text-gray-800">
@@ -55,7 +61,7 @@ const Portfolio = () => {
       <div className="my-4 border-t-2"></div>
 
       <div className="sm:flex sm:flex-wrap">
-        {ITEMS.map((items) => {
+        {/* {ITEMS.map((items) => {
           return (
             <div key={items.title} className="h-96 sm:mr-4 sm:w-72 ">
               <div className="mt-6">
@@ -75,6 +81,39 @@ const Portfolio = () => {
               </div>
               <div className="my-2  font-['Avenir_Next'] text-xs font-bold text-gray-400">
                 <p>{items.creationTime}</p>
+              </div>
+            </div>
+          );
+        })} */}
+        {props.contents.map((content) => {
+          return (
+            <div key={content.id} className="h-96 sm:mr-4 sm:w-72 ">
+              <div className="mt-6">
+                <Image
+                  className="w-[390px] bg-purple-300"
+                  src={content.image.url}
+                  width={385}
+                  height={200}
+                  alt=""
+                />
+
+                <Link href={`/portfolio/${content.id}`}>
+                  <a>
+                    <div className="my-3 h-4 font-['YuGothic'] text-2xl font-bold text-gray-700">
+                      <h1>{content.title}</h1>
+                    </div>
+                    <div className="mt-6 text-clip font-['YuGothic'] text-gray-700">
+                      <div
+                        className="text-ellipsis"
+                        dangerouslySetInnerHTML={{ __html: content.text }}
+                      />
+                    </div>
+                    <div className="my-2 font-['Avenir_Next'] text-xs font-bold text-gray-400">
+                      {dayjs(content.productionStart).format("YYYY.MM.DD")} -{" "}
+                      {dayjs(content.productionEnd).format("YYYY.MM.DD")}
+                    </div>
+                  </a>
+                </Link>
               </div>
             </div>
           );

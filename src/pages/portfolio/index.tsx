@@ -5,7 +5,7 @@ import Image from "next/image";
 import { client } from "src/libs/client";
 import dayjs from "dayjs";
 
-export type Portfolio = {
+export type PortfolioType = {
   title: string;
   text: string;
   image: {
@@ -18,7 +18,7 @@ export type Portfolio = {
   productionEnd: string;
 };
 
-type Props = MicroCMSListResponse<Portfolio>;
+type Props = MicroCMSListResponse<PortfolioType>;
 
 const PortfolioPages: NextPage<Props> = (props) => {
   return (
@@ -68,7 +68,7 @@ const PortfolioPages: NextPage<Props> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const data = await client.getList<Portfolio>({ endpoint: "portfolio" });
+  const data = await client.getList<PortfolioType>({ endpoint: "portfolio" });
   return {
     props: data,
   };

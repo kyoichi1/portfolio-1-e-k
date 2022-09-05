@@ -3,9 +3,9 @@ import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import { client } from "src/libs/client";
-import { Portfolio } from "src/pages/portfolio";
+import { PortfolioType } from "src/pages/portfolio";
 
-type Props = Portfolio & MicroCMSContentId & MicroCMSDate;
+type Props = PortfolioType & MicroCMSContentId & MicroCMSDate;
 
 const PortfolioId: NextPage<Props> = (props) => {
   return (
@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
   if (!ctx.params) {
     return { notFound: true };
   }
-  const data = await client.getListDetail<Portfolio>({
+  const data = await client.getListDetail<PortfolioType>({
     endpoint: "portfolio",
     contentId: ctx.params.id,
   });

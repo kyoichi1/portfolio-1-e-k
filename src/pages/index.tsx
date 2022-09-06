@@ -8,17 +8,12 @@ import { Title } from "src/component/Title";
 import { Twitter } from "src/component/Twitter";
 import { client } from "src/libs/client";
 import { PortfolioType } from "./portfolio";
-import { type } from "os";
 import { Blog } from "./blog";
 
-/* ブログ用 */
-// type Props = MicroCMSListResponse<Blog>;
-
-/* ポートフォリオ用 */
-type Props = MicroCMSListResponse<PortfolioType>;
-
-/* 共通利用模索中（調整中） */
-// type Props = MicroCMSListResponse<Blog> | MicroCMSListResponse<PortfolioType>;
+type Props = {
+  blog: MicroCMSListResponse<Blog>;
+  portfolio: MicroCMSListResponse<PortfolioType>;
+};
 
 const HOME: NextPage<Props> = (props) => {
   return (
@@ -26,13 +21,18 @@ const HOME: NextPage<Props> = (props) => {
       <Title />
 
       {/* TODO  totalCount={0} limit={0} offset={0} BlogListの型を設定して左記は消したい */}
-      {/* <BlogList contents={props.contents} totalCount={0} limit={0} offset={0} /> */}
+      <BlogList
+        contents={props.blog.contents}
+        totalCount={0}
+        limit={0}
+        offset={0}
+      />
 
       <Button title="View All" />
 
       {/*TODO  contents={[]} totalCount={0} limit={0} offset={0} Portfolioの型を設定して左記は消したい*/}
       <Portfolio
-        contents={props.contents}
+        contents={props.portfolio.contents}
         totalCount={0}
         limit={0}
         offset={0}
@@ -56,34 +56,15 @@ const HOME: NextPage<Props> = (props) => {
 
 export default HOME;
 
-//TOTO BlogとProtfolioのデータを共通利用できるように変更したい（現在は切り替えて表示は確認済み）
-
-//[Blogページのデータ受け渡し用]
-// export const getStaticProps: GetStaticProps<Props> = async () => {
-//   const data = await client.getList<Blog>({ endpoint: "blog" });
-//   return {
-//     props: data,
-//   };
-// };
-
-//[Portfolioページのデータ受け渡し用]
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const data = await client.getList<PortfolioType>({ endpoint: "portfolio" });
+  const blogData = await client.getList<Blog>({ endpoint: "blog" });
+  const portfolioData = await client.getList<PortfolioType>({
+    endpoint: "portfolio",
+  });
   return {
-    props: data,
+    props: {
+      blog: blogData,
+      portfolio: portfolioData,
+    },
   };
 };
-
-//[共通利用模索中（調整中）]
-// export const getStaticProps: GetStaticProps<Props> = async () => {
-//   const data = await client.getList<Blog>({ endpoint: "blog" });
-//   const Portfoliodata = await client.getList<Portfolio>({
-//     endpoint: "portfolio",
-//   });
-//   return {
-//     props: {
-//       blog: blog.contents,
-//       portfolio: portfolio.contents,
-//     },
-//   };
-// };

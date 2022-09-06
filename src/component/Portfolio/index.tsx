@@ -20,6 +20,8 @@ export const Portfolio: FC<Props> = (props) => {
           return (
             <div key={content.id} className="h-96 sm:mr-4 sm:w-72 ">
               <div className="mt-6">
+                <Link href={`/portfolio/${content.id}`}>
+                  <a>
                     <Image
                       className="w-[390px] bg-purple-300"
                       src={content.image.url}
@@ -27,9 +29,6 @@ export const Portfolio: FC<Props> = (props) => {
                       height={200}
                       alt=""
                     />
-
-                <Link href={`/portfolio/${content.id}`}>
-                  <a>
                     <div className="my-3 h-4 font-['YuGothic'] text-2xl font-bold text-gray-700">
                       <h1>{content.title}</h1>
                     </div>

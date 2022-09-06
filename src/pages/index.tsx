@@ -41,18 +41,7 @@ const HOME: NextPage<Props> = (props) => {
           <Button title="View on GitHub" />
         </div>
         <div className="sm:w-96">
-          <Twitter
-            user={{
-              userName: "しまぶーのIT大学",
-              userAccount: "shimabu",
-              userImage: "/Twitter-shimabu.png",
-            }}
-            body={{
-              text: "",
-              date: "5月25日",
-              link: "https://www.noway-form.com/ja",
-            }}
-          />
+          <Twitter />
           <div className="mt-7 sm:mt-10">
             <Button title="View on Twitter" />
           </div>

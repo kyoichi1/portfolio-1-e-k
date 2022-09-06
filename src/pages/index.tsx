@@ -1,15 +1,15 @@
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import type { GetStaticProps, NextPage } from "next";
-import { type } from "os";
-import BlogList from "src/component/Blog/BlogList";
-import Button from "src/component/Button";
-import GitHub from "src/component/GitHub";
-import Portfolio from "src/component/Portfolio";
-import Title from "src/component/Title";
-import Twitter from "src/component/Twitter";
+import { BlogList } from "src/component/Blog/BlogList";
+import { Button } from "src/component/Button";
+import { GitHub } from "src/component/GitHub";
+import { Portfolio } from "src/component/Portfolio";
+import { Title } from "src/component/Title";
+import { Twitter } from "src/component/Twitter";
 import { client } from "src/libs/client";
-import { Blog } from "./blog";
 import { PortfolioType } from "./portfolio";
+import { type } from "os";
+import { Blog } from "./blog";
 
 /* ブログ用 */
 // type Props = MicroCMSListResponse<Blog>;

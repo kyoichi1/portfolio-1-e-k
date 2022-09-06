@@ -7,7 +7,7 @@ import { PortfolioType } from "src/pages/portfolio";
 
 type Props = MicroCMSListResponse<PortfolioType>;
 
-const Portfolio: FC<Props> = (props) => {
+export const Portfolio: FC<Props> = (props) => {
   return (
     <div className="mx-4 mt-10 sm:mx-56 sm:mr-32 sm:w-auto">
       <div className="text-3xl font-bold text-gray-800">
@@ -20,13 +20,13 @@ const Portfolio: FC<Props> = (props) => {
           return (
             <div key={content.id} className="h-96 sm:mr-4 sm:w-72 ">
               <div className="mt-6">
-                <Image
-                  className="w-[390px] bg-purple-300"
-                  src={content.image.url}
-                  width={385}
-                  height={200}
-                  alt=""
-                />
+                    <Image
+                      className="w-[390px] bg-purple-300"
+                      src={content.image.url}
+                      width={385}
+                      height={200}
+                      alt=""
+                    />
 
                 <Link href={`/portfolio/${content.id}`}>
                   <a>
@@ -53,5 +53,3 @@ const Portfolio: FC<Props> = (props) => {
     </div>
   );
 };
-
-export default Portfolio;

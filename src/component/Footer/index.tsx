@@ -1,10 +1,4 @@
-import React from "react";
-
-type FooterProps = {
-  copyright: string;
-};
-
-const Footer = (props: FooterProps) => {
+export const Footer = () => {
   return (
     <div>
       <div className="my-auto mx-4 mt-10 w-96 border-t-2 sm:w-auto "></div>
@@ -14,5 +8,3 @@ const Footer = (props: FooterProps) => {
     </div>
   );
 };
-
-export default Footer;

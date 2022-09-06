@@ -1,7 +1,7 @@
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import type { GetStaticProps, NextPage } from "next";
+import { BlogList } from "src/component/Blog/BlogList";
 import { client } from "src/libs/client";
-import BlogList from "src/component/Blog/BlogList";
 
 export type Blog = {
   title: string;

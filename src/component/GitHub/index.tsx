@@ -70,7 +70,7 @@ const ITEMS = [
   },
 ];
 
-const GitHub = () => {
+export const GitHub = () => {
   return (
     <div className="mx-4 mt-10 w-96 ">
       <div className="my-4 text-3xl font-bold">GitHub</div>
@@ -129,5 +129,3 @@ const GitHub = () => {
     </div>
   );
 };
-
-export default GitHub;

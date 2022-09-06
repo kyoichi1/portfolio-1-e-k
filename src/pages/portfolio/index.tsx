@@ -1,7 +1,7 @@
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import type { GetStaticProps, NextPage } from "next";
+import { Portfolio } from "src/component/Portfolio";
 import { client } from "src/libs/client";
-import Portfolio from "src/component/Portfolio";
 
 export type PortfolioType = {
   title: string;

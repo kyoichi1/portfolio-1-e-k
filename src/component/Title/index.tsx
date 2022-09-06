@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FaFacebook, FaRss, FaTwitter } from "react-icons/fa";
 
-const Title = () => {
+export const Title = () => {
   return (
     <div className=" h-60 w-auto items-center bg-pink-600 text-white sm:pl-24 ">
       <div className="h-40 items-center justify-center  px-4 sm:flex sm:h-64  sm:justify-between sm:px-32">
@@ -19,23 +19,23 @@ const Title = () => {
         <div className="flex h-32 w-20 items-center sm:min-w-fit">
           <div className="mr-3">
             <Link href="https://twitter.com">
-            <a>
-            <FaTwitter />
-            </a>
+              <a>
+                <FaTwitter />
+              </a>
             </Link>
           </div>
           <div className="mr-3">
-          <Link href="https://ja-jp.facebook.com">
-            <a>
-            <FaFacebook />
-            </a>
+            <Link href="https://ja-jp.facebook.com">
+              <a>
+                <FaFacebook />
+              </a>
             </Link>
           </div>
           <div className="mr-3">
             <Link href="">
-            <a>
-            <FaRss />
-            </a>
+              <a>
+                <FaRss />
+              </a>
             </Link>
           </div>
         </div>
@@ -43,5 +43,3 @@ const Title = () => {
     </div>
   );
 };
-
-export default Title;

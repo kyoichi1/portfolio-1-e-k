@@ -22,11 +22,14 @@ type Props = MicroCMSListResponse<PortfolioType>;
 
 const HOME: NextPage<Props> = (props) => {
   return (
-    <div className="m-auto w-96 min-w-min items-center sm:w-auto">
+    <div className="m-auto w-96 min-w-min items-center dark:bg-slate-800 sm:w-auto">
       <Title />
-      {/* TODO  totalCount={0} limit={0} offset={0} BlogListの型を設定して左記は消したい
-      <BlogList contents={props.contents} totalCount={0} limit={0} offset={0} /> */}
+
+      {/* TODO  totalCount={0} limit={0} offset={0} BlogListの型を設定して左記は消したい */}
+      {/* <BlogList contents={props.contents} totalCount={0} limit={0} offset={0} /> */}
+
       <Button title="View All" />
+
       {/*TODO  contents={[]} totalCount={0} limit={0} offset={0} Portfolioの型を設定して左記は消したい*/}
       <Portfolio
         contents={props.contents}

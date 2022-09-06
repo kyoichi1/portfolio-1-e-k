@@ -9,20 +9,21 @@ type Props = PortfolioType & MicroCMSContentId & MicroCMSDate;
 
 const PortfolioId: NextPage<Props> = (props) => {
   return (
-    <div className="mx-4 mt-10 min-h-screen min-w-min sm:ml-56 sm:mr-32 sm:w-auto">
+    <div className="box mx-4 mt-10 box-border min-h-[73vh] min-w-min pb-10 sm:ml-56 sm:mr-32 sm:w-auto ">
       <div className="my-4 text-3xl font-bold text-gray-800">
         <h1>{props.title}</h1>
       </div>
       <div className="border-t-2"></div>
 
       <Image
-        className=" bg-purple-300"
+        className="bg-purple-300"
         src={props.image.url}
         width={1000}
         height={400}
-        alt=""
+        alt="portfolioの画像です"
       />
-      <div className="Class Preview mt-4 h-full">
+
+      <div className="mt-4 h-full">
         <div className="my-2 font-['Avenir_Next'] text-xs font-bold text-gray-400">
           {dayjs(props.productionStart).format("YYYY.MM.DD")} -{" "}
           {dayjs(props.productionEnd).format("YYYY.MM.DD")}

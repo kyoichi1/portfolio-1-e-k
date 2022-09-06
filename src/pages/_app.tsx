@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Header />
       <Component {...pageProps} />
-      <Footer copyright="© ️2022 Shimabu IT University" />
+      <Footer />
     </>
   );
 }

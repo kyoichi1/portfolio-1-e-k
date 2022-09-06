@@ -1,6 +1,6 @@
 import React, { ComponentProps, useState } from "react";
 
-const Contact = () => {
+export const Contact = () => {
   const handleSubmit: ComponentProps<"form">["onSubmit"] = async (e) => {
     e.preventDefault();
     console.log(email, name, text);
@@ -10,7 +10,6 @@ const Contact = () => {
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({ email, name, text }),
     });
-    // console.log(data);
   };
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -81,5 +80,3 @@ const Contact = () => {
     </div>
   );
 };
-
-export default Contact;

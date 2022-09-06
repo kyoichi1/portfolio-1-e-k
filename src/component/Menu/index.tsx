@@ -28,7 +28,7 @@ const MENU = [
   },
 ];
 
-const Menu = () => {
+export const Menu = () => {
   return (
     <div className="h-screen w-full bg-pink-600 p-6 text-white">
       <div className="py-11 text-3xl font-bold">
@@ -52,5 +52,3 @@ const Menu = () => {
     </div>
   );
 };
-
-export default Menu;

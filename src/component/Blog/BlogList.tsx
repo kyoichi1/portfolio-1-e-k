@@ -6,7 +6,7 @@ import { Blog } from "src/pages/blog";
 
 type Props = MicroCMSListResponse<Blog>;
 
-const BlogList: FC<Props> = (props) => {
+export const BlogList: FC<Props> = (props) => {
   return (
     <div className="mx-4 mt-10 sm:mx-56">
       <div className="my-4 text-3xl font-bold text-gray-800">
@@ -40,5 +40,3 @@ const BlogList: FC<Props> = (props) => {
     </div>
   );
 };
-
-export default BlogList;

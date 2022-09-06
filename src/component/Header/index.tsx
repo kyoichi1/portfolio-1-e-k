@@ -22,7 +22,7 @@ const LINKS = [
   },
 ];
 
-const Header = () => {
+export const Header = () => {
   return (
     <div className=" w-auto pt-11 sm:ml-24 sm:justify-around sm:pt-0">
       <div className="mx-4 flex h-16 items-center justify-between text-lg font-bold sm:mx-4">
@@ -60,5 +60,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;

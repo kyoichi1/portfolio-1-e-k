@@ -22,11 +22,14 @@ type Props = MicroCMSListResponse<PortfolioType>;
 
 const HOME: NextPage<Props> = (props) => {
   return (
-    <div className="m-auto w-96 min-w-min items-center sm:w-auto">
+    <div className="m-auto w-96 min-w-min items-center dark:bg-slate-800 sm:w-auto">
       <Title />
-      {/* TODO  totalCount={0} limit={0} offset={0} BlogListの型を設定して左記は消したい
-      <BlogList contents={props.contents} totalCount={0} limit={0} offset={0} /> */}
+
+      {/* TODO  totalCount={0} limit={0} offset={0} BlogListの型を設定して左記は消したい */}
+      {/* <BlogList contents={props.contents} totalCount={0} limit={0} offset={0} /> */}
+
       <Button title="View All" />
+
       {/*TODO  contents={[]} totalCount={0} limit={0} offset={0} Portfolioの型を設定して左記は消したい*/}
       <Portfolio
         contents={props.contents}
@@ -41,18 +44,7 @@ const HOME: NextPage<Props> = (props) => {
           <Button title="View on GitHub" />
         </div>
         <div className="sm:w-96">
-          <Twitter
-            user={{
-              userName: "しまぶーのIT大学",
-              userAccount: "shimabu",
-              userImage: "/Twitter-shimabu.png",
-            }}
-            body={{
-              text: "",
-              date: "5月25日",
-              link: "https://www.noway-form.com/ja",
-            }}
-          />
+          <Twitter />
           <div className="mt-7 sm:mt-10">
             <Button title="View on Twitter" />
           </div>

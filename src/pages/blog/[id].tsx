@@ -8,7 +8,7 @@ type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
 const BlogId: NextPage<Props> = (props) => {
   return (
-    <div className="mx-4 mt-10 min-h-screen min-w-min sm:ml-56 sm:mr-32 sm:w-auto">
+    <div className="mx-4 mt-10 box-border min-h-[73vh] min-w-min pb-10 sm:ml-56 sm:mr-32 sm:w-auto">
       <div className="my-4 text-3xl font-bold text-gray-800">
         <h1>{props.title}</h1>
       </div>
@@ -19,11 +19,8 @@ const BlogId: NextPage<Props> = (props) => {
             {dayjs(props.publishedAt).format("YYYY.MM.DD")}
           </time>
         </div>
-        <div className="text-gray-80  mt-2 h-12 text-clip font-['YuGothic'] text-gray-700">
-          <div
-            className=" overflow-hidden text-ellipsis"
-            dangerouslySetInnerHTML={{ __html: props.body }}
-          />
+        <div className="text-gray-80  mt-2 box-border h-12  text-clip font-['YuGothic'] text-gray-700 ">
+          <div dangerouslySetInnerHTML={{ __html: props.body }} />
         </div>
       </div>
     </div>

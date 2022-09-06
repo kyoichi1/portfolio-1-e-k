@@ -11,7 +11,7 @@ import { MdClose } from "react-icons/md";
 
 const MENU = [
   {
-    href: "/about",
+    href: "/aboutPages",
     title: "About",
   },
   {

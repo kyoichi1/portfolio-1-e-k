@@ -1,19 +1,44 @@
 import Image from "next/image";
-import React from "react";
+import React, { FC } from "react";
 
-type TwitterProps = {
-  user: {
-    userName: string;
-    userAccount: string;
-    userImage: string;
-  };
-  body: {
-    text: string;
-    image?: string;
-    date: string;
-    link?: string;
-  };
-};
+/* データ受け取りの際にこの型が使えれば使う予定（モック用/現在はporpsで受取してないので利用していない） */
+// type TwitterProps = {
+//   userName: string;
+//   userAccount: string;
+//   userImage: string;
+//   text: string;
+//   image?: string;
+//   date: string;
+//   link?: string;
+// };
+
+/* TODO 今はデータをここに書いてMapを使っているが、APIからデータを取得に変更する */
+const TWITTER = [
+  {
+    userName: "しまぶーのIT大学",
+    userAccount: "shimabu",
+    userImage: "/Twitter-shimabu.png",
+    text: "",
+    date: "5月25日",
+    link: "https://www.noway-form.com/ja",
+  },
+  {
+    userName: "しまぶーのIT大学",
+    userAccount: "shimabu",
+    userImage: "/Twitter-shimabu.png",
+    text: "",
+    date: "5月26日",
+    link: "https://www.noway-form.com/ja",
+  },
+  {
+    userName: "しまぶーのIT大学",
+    userAccount: "shimabu",
+    userImage: "/Twitter-shimabu.png",
+    text: "",
+    date: "5月27日",
+    link: "https://www.noway-form.com/ja",
+  },
+];
 
 export const Twitter = () => {
   return (
@@ -23,15 +48,16 @@ export const Twitter = () => {
       </div>
       <div className="border-t-2"></div>
 
-      {/*投稿内容 */}
-      <div className="">
+      {TWITTER.map((twitter) => {
+        return (
+          <div key={twitter.date} className="">
             <div className="mt-10  h-64 ">
               <div className="items-center text-clip rounded font-['YuGothic']  font-light text-gray-700 ">
                 <div className="flex">
                   <div className="m-2">
                     <Image
                       className="items-center rounded-full"
-                  src={props.user.userImage}
+                      src={twitter.userImage}
                       width={40}
                       height={40}
                       alt=""
@@ -40,13 +66,13 @@ export const Twitter = () => {
                   <div className="w-80 text-ellipsis">
                     <div className="ml-2 flex items-center font-bold ">
                       <p className=" overflow-hidden  font-bold ">
-                    {props.user.userName}
+                        {twitter.userName}
                       </p>
                       <p className=" ml-2 overflow-hidden  text-xs text-gray-500">
-                    {`@${props.user.userAccount}`}
+                        {`@${twitter.userAccount}`}
                       </p>
                       <p className="ml-2 overflow-hidden  text-xs text-gray-500">
-                    {props.body.date}
+                        {twitter.date}
                       </p>
                     </div>
 
@@ -61,9 +87,9 @@ export const Twitter = () => {
                         試しに使っていただけると幸いです😊
                         <br />
                         <br />
-                    {props.body.link ? (
-                      <a className="text-blue-400" href={props.body.link}>
-                        {props.body.link}
+                        {twitter.link ? (
+                          <a className="text-blue-400" href={twitter.link}>
+                            {twitter.link}
                           </a>
                         ) : null}
                       </p>
@@ -73,109 +99,8 @@ export const Twitter = () => {
               </div>
             </div>
           </div>
-
-      {/*投稿内容 */}
-      <div className="">
-        <div className="mt-10   h-64 ">
-          <div className="items-center text-clip rounded font-['YuGothic']  font-light text-gray-700 ">
-            <div className="flex">
-              <div className="m-2">
-                <Image
-                  className="items-center rounded-full"
-                  src="/Twitter-shimabu.png"
-                  width={40}
-                  height={40}
-                  alt=""
-                />
-              </div>
-              <div className="w-80 text-ellipsis">
-                <div className="ml-2 flex items-center font-bold ">
-                  <p className=" overflow-hidden  font-bold ">
-                    しまぶーのIT大学
-                  </p>
-                  <p className=" ml-2 overflow-hidden  text-xs text-gray-500">
-                    @shimabu
-                  </p>
-                  <p className="ml-2 overflow-hidden  text-xs text-gray-500">
-                    5月25日
-                  </p>
-                </div>
-
-                <div className="mx-2 my-4 text-sm">
-                  <p>
-                    📣 新サービス「Noway Form」をリリースしました!
-                    <br />
-                    <br /> Noway
-                    Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogleFormsでやっていたことがNotionだけで完結します✌✨
-                    <br />
-                    <br />
-                    試しに使っていただけると幸いです😊
-                    <br />
-                    <br />
-                    <a
-                      className="text-blue-400"
-                      href="https://www.noway-form.com/ja"
-                    >
-                      https://www.noway-form.com/ja
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/*投稿内容 */}
-      <div className="">
-        <div className="mt-10  h-64 ">
-          <div className="items-center text-clip rounded font-['YuGothic']  font-light text-gray-700 ">
-            <div className="flex">
-              <div className="m-2">
-                <Image
-                  className="items-center rounded-full"
-                  src="/Twitter-shimabu.png"
-                  width={40}
-                  height={40}
-                  alt=""
-                />
-              </div>
-              <div className="w-80 text-ellipsis">
-                <div className="ml-2 flex items-center font-bold ">
-                  <p className=" overflow-hidden  font-bold ">
-                    しまぶーのIT大学
-                  </p>
-                  <p className=" ml-2 overflow-hidden  text-xs text-gray-500">
-                    @shimabu
-                  </p>
-                  <p className="ml-2 overflow-hidden  text-xs text-gray-500">
-                    5月25日
-                  </p>
-                </div>
-
-                <div className="mx-2 my-4 text-sm">
-                  <p>
-                    📣 新サービス「Noway Form」をリリースしました!
-                    <br />
-                    <br /> Noway
-                    Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogleFormsでやっていたことがNotionだけで完結します✌✨
-                    <br />
-                    <br />
-                    試しに使っていただけると幸いです😊
-                    <br />
-                    <br />
-                    <a
-                      className="text-blue-400"
-                      href="https://www.noway-form.com/ja"
-                    >
-                      https://www.noway-form.com/ja
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { client } from "src/libs/client";
+import { microcmsClient } from "src/libs/microcms/microcmsClient";
 import { Blog } from "src/pages/blog";
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
@@ -28,7 +28,7 @@ const BlogId: NextPage<Props> = (props) => {
 };
 
 export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
-  const data = await client.getList({ endpoint: "blog" });
+  const data = await microcmsClient.getList({ endpoint: "blog" });
   const ids = data.contents.map((content) => `/blog/${content.id}`);
   return {
     paths: ids,
@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
   if (!ctx.params) {
     return { notFound: true };
   }
-  const data = await client.getListDetail<Blog>({
+  const data = await microcmsClient.getListDetail<Blog>({
     endpoint: "blog",
     contentId: ctx.params.id,
   });

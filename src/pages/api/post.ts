@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { client } from "src/libs/client";
+import { microcmsClient } from "src/libs/microcms/microcmsClient";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   // console.log(req.body.p);
-  const data = await client
+  const data = await microcmsClient
     .create({
       endpoint: "contact",
       content: req.body,

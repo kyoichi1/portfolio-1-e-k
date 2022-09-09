@@ -1,7 +1,7 @@
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import type { GetStaticProps, NextPage } from "next";
 import { BlogList } from "src/component/Blog/BlogList";
-import { client } from "src/libs/client";
+import { microcmsClient } from "src/libs/microcms/microcmsClient";
 
 export type Blog = {
   title: string;
@@ -19,7 +19,7 @@ const BlogPages: NextPage<Props> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const data = await client.getList<Blog>({ endpoint: "blog" });
+  const data = await microcmsClient.getList<Blog>({ endpoint: "blog" });
   return {
     props: data,
   };

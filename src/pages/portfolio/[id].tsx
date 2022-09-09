@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
-import { client } from "src/libs/client";
+import { microcmsClient } from "src/libs/microcms/microcmsClient";
 import { PortfolioType } from "src/pages/portfolio";
 
 type Props = PortfolioType & MicroCMSContentId & MicroCMSDate;
@@ -40,7 +40,7 @@ const PortfolioId: NextPage<Props> = (props) => {
 };
 
 export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
-  const data = await client.getList({ endpoint: "portfolio" });
+  const data = await microcmsClient.getList({ endpoint: "portfolio" });
   const ids = data.contents.map((content) => `/portfolio/${content.id}`);
   return {
     paths: ids,
@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
   if (!ctx.params) {
     return { notFound: true };
   }
-  const data = await client.getListDetail<PortfolioType>({
+  const data = await microcmsClient.getListDetail<PortfolioType>({
     endpoint: "portfolio",
     contentId: ctx.params.id,
   });

@@ -6,9 +6,9 @@ import { GitHub } from "src/component/GitHub";
 import { Portfolio } from "src/component/Portfolio";
 import { Title } from "src/component/Title";
 import { Twitter } from "src/component/Twitter";
-import { client } from "src/libs/client";
 import { PortfolioType } from "./portfolio";
 import { Blog } from "./blog";
+import { microcmsClient } from "src/libs/microcms/microcmsClient";
 
 type Props = {
   blog: MicroCMSListResponse<Blog>;
@@ -57,8 +57,8 @@ const HOME: NextPage<Props> = (props) => {
 export default HOME;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const blogData = await client.getList<Blog>({ endpoint: "blog" });
-  const portfolioData = await client.getList<PortfolioType>({
+  const blogData = await microcmsClient.getList<Blog>({ endpoint: "blog" });
+  const portfolioData = await microcmsClient.getList<PortfolioType>({
     endpoint: "portfolio",
   });
   return {

@@ -41,7 +41,7 @@ const HOME: NextPage<Props> = (props) => {
       <Button title="View All" />
 
       <div className="max-w-[960px] justify-between sm:mx-52 sm:flex">
-        <div className="w-96 bg-green-200">
+        <div className="w-96">
           <GitHub />
           <Button title="View on GitHub" />
         </div>

@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import dayjs from "dayjs";
+import Image from "next/image";
 import React, { FC } from "react";
 
 // TODO:SDKの中の型を見つけて型付けが必要（見つかる気配相当薄い...）
@@ -21,19 +21,13 @@ export const Twitter: FC<Props> = (props) => {
                 <div className="items-center text-clip rounded font-['YuGothic']  font-light text-gray-700 ">
                   <div className="flex">
                     <div className="m-2">
-                      {/* TODO:Next/Imageは基本このまま使うとエラーとなるが、ゴリゴリすると設定できるとのことなので変更対応できればしたい*/}
-                      {/* <Image
-                          className="items-center rounded-full bg-blue-600"
-                          src="{props.tw.user.data.profile_image_url}"
-                          width={40}
-                          height={40}
-                          alt=""
-                        /> */}
-                      <img
-                        className="h-[40px] w-[40px] items-center rounded-full"
-                        src={props.twitter.user.data.profile_image_url}
-                        alt=""
-                      ></img>
+                      <Image
+                        className="items-center rounded-full bg-blue-600"
+                        src={props.twitter.user.data?.profile_image_url}
+                        width={40}
+                        height={40}
+                        alt="profile_image"
+                      />
                     </div>
                     <div className="mt-4 w-80 text-ellipsis">
                       <div className="ml-2 flex items-center font-bold ">

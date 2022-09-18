@@ -39,9 +39,7 @@ export const Twitter: FC<Props> = (props) => {
                         </p>
                         {/* TODO：取ってこれてる日程データが違う気がします...修正予定*/}
                         <p className="ml-2 overflow-hidden  text-xs text-gray-500">
-                          {dayjs(props.twitter.user.data.created_at).format(
-                            "MM月DD日"
-                          )}
+                          {dayjs(value.created_at).format("MM月DD日")}
                         </p>
                       </div>
                       <div className="mx-2 my-4 text-sm">

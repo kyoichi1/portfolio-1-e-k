@@ -10,11 +10,11 @@ import { Blog } from "./blog";
 import { microcmsClient } from "src/libs/microcms/microcmsClient";
 import { getTweetList } from "src/libs/twitter/twiiterClient";
 import { Twitter } from "src/component/Twitter";
-
+import { Props as TwitterProps } from "src/component/Twitter";
 type Props = {
   blog: MicroCMSListResponse<Blog>;
   portfolio: MicroCMSListResponse<PortfolioType>;
-  twitter: any;
+  twitter: TwitterProps;
 };
 
 const HOME: NextPage<Props> = (props) => {
@@ -47,7 +47,10 @@ const HOME: NextPage<Props> = (props) => {
         </div>
 
         <div className="sm:w-96">
-          <Twitter twitter={props.twitter} />
+          <Twitter
+            user={props.twitter.user}
+            tweetlist={props.twitter.tweetlist}
+          />
           <div className="mt-7 sm:mt-10">
             <Button title="View on Twitter" />
           </div>
@@ -70,7 +73,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     props: {
       blog: blogData,
       portfolio: portfolioData,
-      twitter: twitterData,
+      twitter: twitterData!,
     },
   };
 };

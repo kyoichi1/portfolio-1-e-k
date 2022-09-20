@@ -5,14 +5,16 @@ import { Button } from "src/component/Button";
 import { GitHub } from "src/component/GitHub";
 import { Portfolio } from "src/component/Portfolio";
 import { Title } from "src/component/Title";
-import { Twitter } from "src/component/Twitter";
 import { PortfolioType } from "./portfolio";
 import { Blog } from "./blog";
 import { microcmsClient } from "src/libs/microcms/microcmsClient";
-
+import { getTweetList } from "src/libs/twitter/twiiterClient";
+import { Twitter } from "src/component/Twitter";
+import { Props as TwitterProps } from "src/component/Twitter";
 type Props = {
   blog: MicroCMSListResponse<Blog>;
   portfolio: MicroCMSListResponse<PortfolioType>;
+  twitter: TwitterProps;
 };
 
 const HOME: NextPage<Props> = (props) => {
@@ -27,7 +29,6 @@ const HOME: NextPage<Props> = (props) => {
         limit={0}
         offset={0}
       />
-
       <Button title="View All" />
 
       {/*TODO  contents={[]} totalCount={0} limit={0} offset={0} Portfolioの型を設定して左記は消したい*/}
@@ -38,13 +39,18 @@ const HOME: NextPage<Props> = (props) => {
         offset={0}
       />
       <Button title="View All" />
-      <div className="justify-between sm:mx-52 sm:flex ">
-        <div className="w-96 ">
+
+      <div className="max-w-[960px] justify-between sm:mx-52 sm:flex">
+        <div className="w-96">
           <GitHub />
           <Button title="View on GitHub" />
         </div>
+
         <div className="sm:w-96">
-          <Twitter />
+          <Twitter
+            user={props.twitter.user}
+            tweetlist={props.twitter.tweetlist}
+          />
           <div className="mt-7 sm:mt-10">
             <Button title="View on Twitter" />
           </div>
@@ -61,10 +67,13 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const portfolioData = await microcmsClient.getList<PortfolioType>({
     endpoint: "portfolio",
   });
+  const twitterData = await getTweetList();
+
   return {
     props: {
       blog: blogData,
       portfolio: portfolioData,
+      twitter: twitterData!,
     },
   };
 };

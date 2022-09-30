@@ -13,7 +13,17 @@ const GithubPages = ({ pinnedItems }) => {
         return (
           <a key={item.id} href={item.url}>
             <h2>{item.name}</h2>
-            <p>⭐ {item.stargazers.totalCount}</p>
+            <h2>{item.description}</h2>
+            {item.languages.edges.map((language) => {
+              return (
+                <div key={language.node.name} className>
+                  <p>{language.node.name}</p>
+                  <p>{language.node.color}</p>
+                </div>
+              );
+            })}
+            <p>🍴{item.forkCount}</p>
+            <p>⭐ {item.stargazerCount}</p>
           </a>
         );
       })}
@@ -50,11 +60,19 @@ export async function getStaticProps() {
               node {
                 ... on Repository {
                   name
+                  description
                   id
                   url
-                  stargazers {
-                    totalCount
+                  languages(first: 10) {
+                    edges {
+                      node {
+                        color
+                        name
+                      }
+                    }
                   }
+                  stargazerCount
+                  forkCount
                 }
               }
             }
@@ -63,6 +81,22 @@ export async function getStaticProps() {
       }
     `,
   });
+
+  // languages(first: 10) {
+  //   edges {
+  //     node {
+  //       id
+  //       color
+  //       name
+  //     }
+  //     size
+  //   }
+  // }
+  // forks {
+  //   totalCount
+  // }
+  // description
+  // stargazerCount
 
   const { user } = data;
   const pinnedItems = user.pinnedItems.edges.map((edge) => edge.node);
